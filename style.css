@@ -1,0 +1,56 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(180deg, #FBF8FF 0%, #ECF3FF 100%);
+  }
+
+  .question{
+    width: 450;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    border: solid 1px #7ba2ff;
+    box-shadow: 4px 4px 0px 1px #839cc3;
+    padding: 32px;
+    gap: 12px;
+    border-radius: 12px;
+
+  }
+  #quiz-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #answer{
+    width: 100%;
+    display: flex;
+    padding: 12px;
+    border-radius: 8px;
+    border: solid 1px #c7c7c7;
+  }
+
+  #submit{
+    display: flex;
+    padding: 12px 32px;
+    color: #ffffff;
+    background: #126dff;
+    border-radius: 8px;
+    border: solid 0px #c7c7c7;
+    font-size: 14px;
+  }
+  #submit:hover{
+    background: #0a5de2;
+  }
+
+  #rive-canvas{
+    width: 446px;
+    height:244px;
+    margin-bottom: 20px;
+  }

@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rive Animation on Submit</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@rive-app/canvas@latest/rive.js"></script>
+</head>
+<body>
+  
+  <div class="question">
+    <canvas id="rive-canvas" width="892px" height="488px" ></canvas>
+  <form id="quiz-form">
+    <label for="answer">By how many runs did INDIA win the World Cup?</label>
+    <input type="number" id="answer" required>
+    <button id="submit" type="submit">Submit</button>
+  </form>
+
+  
+</div>
+
+  <!-- Include Rive.js -->
+  <script>
+    const form = document.getElementById("quiz-form");
+    const answerInput = document.getElementById("answer");
+
+    const riveInstance = new rive.Rive({
+      src: "Indwinsworldcup.riv",
+      canvas: document.getElementById("rive-canvas"),
+      artboard: "indwc",
+      stateMachines: ["Indwins"],
+      autoplay: true,
+      onLoad: () => {
+        const inputs = riveInstance.stateMachineInputs("Indwins");
+
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const userAnswer = parseInt(answerInput.value, 10);
+
+          if (userAnswer === 7) {
+            inputs.find(input => input.name === "is 7").fire();
+          } else {
+            inputs.find(input => input.name === "not 7").fire();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
