@@ -7,10 +7,10 @@ body {
     margin: 0;
     background: linear-gradient(180deg, #FBF8FF 0%, #ECF3FF 100%);
   }
-
-  .question{
-    width: 450;
-    display:flex;
+  
+  .question {
+    max-width: 450px;
+    display: flex;
     flex-direction: column;
     align-items: center;
     background: #ffffff;
@@ -19,24 +19,26 @@ body {
     padding: 32px;
     gap: 12px;
     border-radius: 12px;
-
   }
-  #quiz-form{
+  
+  #quiz-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
+    text-align: center;
+    line-height: 150%;
   }
-
-  #answer{
+  
+  #answer {
     width: 100%;
     display: flex;
     padding: 12px;
     border-radius: 8px;
     border: solid 1px #c7c7c7;
   }
-
-  #submit{
+  
+  #submit {
     display: flex;
     padding: 12px 32px;
     color: #ffffff;
@@ -45,12 +47,51 @@ body {
     border: solid 0px #c7c7c7;
     font-size: 14px;
   }
-  #submit:hover{
+  
+  #submit:hover {
     background: #0a5de2;
   }
-
-  #rive-canvas{
+  
+  #rive-canvas {
     width: 446px;
-    height:244px;
+    height: 244px;
     margin-bottom: 20px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .question {
+      max-width: 90%;
+      padding: 24px;
+    }
+  
+    #rive-canvas {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .question {
+      max-width: 95%;
+      padding: 16px;
+      gap: 8px;
+    }
+  
+    #quiz-form {
+      gap: 8px;
+    }
+  
+    #answer {
+      padding: 12px;
+    }
+  
+    #submit {
+      padding: 12px 64px;
+      font-size: 16px;
+    }
+  
+    #rive-canvas {
+      margin-bottom: 16px;
+    }
   }
